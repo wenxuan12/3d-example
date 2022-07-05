@@ -3,9 +3,7 @@
 function App() {
   
   return (
-    <div className="App">
-      success
-    </div>
+    <div className="App"></div>
   );
 }
 
