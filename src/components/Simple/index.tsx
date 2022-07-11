@@ -1,13 +1,15 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-function simple() {
+export default function Simple() {
+    // 创建透视相机
     let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.set(5,5,5);
-    camera.lookAt(0,0,0);
+    camera.position.set(5,5,5); // 设置相机位置
+    camera.lookAt(0,0,0); // 设置相机观察方向
 
     let scene = new THREE.Scene();
-    
+
+    // 添加三维辅助坐标系
     const axesHelper = new THREE.AxesHelper( 3 );
     scene.add( axesHelper );
 
@@ -20,10 +22,10 @@ function simple() {
     var point = new THREE.PointLight(0xffffff);
     point.position.set(40, 40, 40); //点光源位置
     scene.add(point); 
-    
+
     var geometry = new THREE.BoxGeometry(1, 1, 1); //创建一个立方体几何对象Geometry
     var material = new THREE.MeshLambertMaterial({ //材质对象Material
-      color: 0x0000ff
+        color: 0x0000ff
     });
     var mesh = new THREE.Mesh(geometry, material); //网格模型对象Mesh
     scene.add(mesh); //网格模型添加到场景中
@@ -33,7 +35,7 @@ function simple() {
     renderer.setClearColor(0xb9d3ff, 1);
 
     let controls = new OrbitControls(camera, renderer.domElement);
-    
+
     document.body.appendChild(renderer.domElement);
     function animation() {
         requestAnimationFrame(animation);
@@ -41,6 +43,6 @@ function simple() {
         renderer.render(scene, camera);
     }
     animation();
+    
+    return (<div></div>);
 }
-
-export default simple;
