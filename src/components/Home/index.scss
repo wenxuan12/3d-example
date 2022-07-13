@@ -2,13 +2,15 @@ body {
     position: relative;
 }
 .home {
+    width: 1290px;
     position: absolute;
     margin: auto;
     left: 0;
     right: 0;
     top: 0;
-    // bottom: 0;
+    bottom: 0;
     overflow-y: auto;
+    pointer-events: none;
     &::-webkit-scrollbar {
         width: 0 !important;
     }
@@ -20,13 +22,14 @@ body {
     }
 }
 .item-list {
-    max-width: 1307px;
+    max-width: 1290px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     .item {
         margin: 16px 24px;
+        pointer-events: visible;
     }
 }
 

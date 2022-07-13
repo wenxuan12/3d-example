@@ -1,18 +1,25 @@
+import { useEffect } from 'react';
 import './index.scss';
-import simple from '../../asset/simple.jpg';
 import { Card } from './card';
 import * as THREE from 'three';
 import { Sky } from 'three/examples/jsm/objects/Sky.js';
 import { Water } from 'three/examples/jsm/objects/Water.js';
 import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls.js';
 import waternormals from '../../asset/waternormals.jpg';
+import simple from '../../asset/home/simple.jpg';
+import extrude from '../../asset/home/extrude.jpg';
+
 
 export default function Home() {
-    ocean();
+
+    useEffect(() => {
+        ocean();
+    }, []);
+
     return (
         <div className="home">
             <div className='home-title'>
-                3D examples
+                3D Examples
             </div>
             <div className='item-list'>
                 {
@@ -36,7 +43,12 @@ const list = [{
     title: '简单案例',
     description: '',
     image: simple,
-}];
+}, {
+    link: '#/extrude',
+    title: '挤压几何体',
+    description: '',
+    image: extrude,
+}, ];
 export function ocean() {
     let clock = new THREE.Clock();
     //
@@ -110,7 +122,7 @@ export function ocean() {
     updateSun();
 
     let controls = new FirstPersonControls( camera, renderer.domElement );
-    controls.movementSpeed = 10;
+    controls.movementSpeed = 20;
     controls.lookSpeed = 0.03;
     controls.lookVertical  = false;
 
