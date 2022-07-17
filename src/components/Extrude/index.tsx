@@ -53,7 +53,7 @@ export default function Extrude() {
             extrudePath: closedSpline
         };
         
-        const pts1 = [], count = 6;
+        const pts1 = [], count = 3;
 
         for ( let i = 0; i < count; i ++ ) {
             const l = 20;
@@ -66,7 +66,7 @@ export default function Extrude() {
         const geometry1 = new THREE.ExtrudeGeometry( shape1, extrudeOptions );
         const material1 = new THREE.MeshLambertMaterial( { color: 0xb00000, wireframe: false } );
         const mesh1 = new THREE.Mesh( geometry1, material1 );
-        // scene.add( mesh1 );
+        scene.add( mesh1 );
 
         const pts2 = [], numPts = 5;
 
@@ -80,7 +80,7 @@ export default function Extrude() {
         const material2 = new THREE.MeshLambertMaterial( { color: 0xff8000 } );
         const materials = [ material1, material2 ];
 
-        const extrudeSettings3 = {
+        const extrudeSettings = {
             depth: 20,
             steps: 1,
             bevelEnabled: true,
@@ -89,10 +89,10 @@ export default function Extrude() {
             bevelSegments: 3
         };
 
-        const geometry3 = new THREE.ExtrudeGeometry( shape2, extrudeSettings3 );
-        const mesh3 = new THREE.Mesh( geometry3, materials );
-        mesh3.position.set( 50, 100, 50 );
-        scene.add( mesh3 );
+        const geometry2 = new THREE.ExtrudeGeometry( shape2, extrudeSettings );
+        const mesh2 = new THREE.Mesh( geometry2, materials );
+        mesh2.position.set( 50, 100, 50 );
+        scene.add( mesh2 );
 
         function animate() {
             requestAnimationFrame(animate);

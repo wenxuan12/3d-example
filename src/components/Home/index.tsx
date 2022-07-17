@@ -8,6 +8,7 @@ import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonCont
 import waternormals from '../../asset/waternormals.jpg';
 import simple from '../../asset/home/simple.jpg';
 import extrude from '../../asset/home/extrude.jpg';
+import lights from '../../asset/home/lights.png';
 
 
 export default function Home() {
@@ -45,9 +46,14 @@ const list = [{
     image: simple,
 }, {
     link: '#/extrude',
-    title: '挤压几何体',
+    title: 'ExtrudeGeometry',
     description: '',
     image: extrude,
+}, {
+    link: '#/lights',
+    title: 'Lights Physical',
+    description: '',
+    image: lights,
 }, ];
 export function ocean() {
     let clock = new THREE.Clock();
@@ -127,7 +133,12 @@ export function ocean() {
     controls.lookVertical  = false;
 
     window.addEventListener( 'resize', onWindowResize );
-
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        controls.handleResize();
+    }
     function animate() {
         requestAnimationFrame( animate );
         render();
@@ -137,13 +148,6 @@ export function ocean() {
         controls.update( delta );
         renderer.render( scene, camera );
         water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
-    }
-    
-    function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        controls.handleResize();
     }
     animate();
 }
