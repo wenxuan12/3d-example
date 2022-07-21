@@ -1,20 +1,22 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Extrude from './components/Extrude';
 import Home from './components/Home';
 import Lights from './components/Lights';
 import Simple from './components/Simple';
+import Texts from './components/Texts';
 
 function App() {
 
     return (
-        <Router>
+        <HashRouter>
             <Routes>
                 <Route element={ <Home /> } path="/" />
                 <Route element={ <Simple /> } path="/simple" />
                 <Route element={ <Extrude /> } path="/extrude" />
                 <Route element={ <Lights /> } path="/lights" />
+                <Route element={ <Texts /> } path="/texts" />
             </Routes>
-        </Router>
+        </HashRouter>
     );
 }
 

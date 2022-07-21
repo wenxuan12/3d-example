@@ -5,10 +5,11 @@ import * as THREE from 'three';
 import { Sky } from 'three/examples/jsm/objects/Sky.js';
 import { Water } from 'three/examples/jsm/objects/Water.js';
 import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls.js';
-import waternormals from '../../asset/waternormals.jpg';
-import simple from '../../asset/home/simple.jpg';
-import extrude from '../../asset/home/extrude.jpg';
-import lights from '../../asset/home/lights.png';
+import waternormals from '/src/asset/waternormals.jpg';
+import simple from '/src/asset/home/simple.jpg';
+import extrude from '/src/asset/home/extrude.jpg';
+import lights from '/src/asset/home/lights.jpg';
+import texts from '/src/asset/home/texts.jpg';
 
 
 export default function Home() {
@@ -54,6 +55,11 @@ const list = [{
     title: 'Lights Physical',
     description: '',
     image: lights,
+}, {
+    link: '#/texts',
+    title: '3D中的文字',
+    description: '',
+    image: texts,
 }, ];
 export function ocean() {
     let clock = new THREE.Clock();

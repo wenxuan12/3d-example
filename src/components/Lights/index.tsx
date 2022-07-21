@@ -3,13 +3,13 @@ import * as THREE from 'three';
 import { GUI } from 'dat.gui';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import hardwood2_diffuse from '../../asset/lights/hardwood2_diffuse.jpg';
-import hardwood2_bump from '../../asset/lights/hardwood2_bump.jpg';
-import hardwood2_roughness from '../../asset/lights/hardwood2_roughness.jpg';
-import brick_diffuse from '../../asset/lights/brick_diffuse.jpg';
-import brick_bump from '../../asset/lights/brick_bump.jpg';
-import earth_atmos_2048 from '../../asset/lights/earth_atmos_2048.jpg';
-import earth_specular_2048 from '../../asset/lights/earth_specular_2048.jpg';
+import hardwood2_diffuse from '/src/asset/lights/hardwood2_diffuse.jpg';
+import hardwood2_bump from '/src/asset/lights/hardwood2_bump.jpg';
+import hardwood2_roughness from '/src/asset/lights/hardwood2_roughness.jpg';
+import brick_diffuse from '/src/asset/lights/brick_diffuse.jpg';
+import brick_bump from '/src/asset/lights/brick_bump.jpg';
+import earth_atmos_2048 from '/src/asset/lights/earth_atmos_2048.jpg';
+import earth_specular_2048 from '/src/asset/lights/earth_specular_2048.jpg';
 
 export default function Lights() {
 
