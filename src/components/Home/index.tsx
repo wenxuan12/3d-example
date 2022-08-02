@@ -10,6 +10,7 @@ import simple from '/src/asset/home/simple.jpg';
 import extrude from '/src/asset/home/extrude.jpg';
 import lights from '/src/asset/home/lights.jpg';
 import texts from '/src/asset/home/texts.jpg';
+import horse from '/src/asset/home/horse.jpg';
 
 
 export default function Home() {
@@ -40,6 +41,7 @@ export default function Home() {
         </div>
     )
 }
+
 const list = [{
     link: '#/simple',
     title: '简单案例',
@@ -60,8 +62,14 @@ const list = [{
     title: '3D中的文字',
     description: '',
     image: texts,
+}, {
+    link: '#/horse',
+    title: '加载GLTF模型',
+    description: '',
+    image: horse,
 }, ];
-export function ocean() {
+
+function ocean() {
     let clock = new THREE.Clock();
     //
     let scene = new THREE.Scene();

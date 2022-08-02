@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Extrude from './components/Extrude';
 import Home from './components/Home';
+import Horse from './components/Horse';
 import Lights from './components/Lights';
 import Simple from './components/Simple';
 import Texts from './components/Texts';
@@ -15,6 +16,7 @@ function App() {
                 <Route element={ <Extrude /> } path="/extrude" />
                 <Route element={ <Lights /> } path="/lights" />
                 <Route element={ <Texts /> } path="/texts" />
+                <Route element={ <Horse /> } path="/horse" />
             </Routes>
         </HashRouter>
     );
